@@ -1,7 +1,6 @@
 # serverless-heartbeat
 A serverless CI/CD pipeline built with Python and GitHub Actions to automate website uptime monitoring.
 
-
 <div align="center">
 
 # 🫀 Enterprise-Grade Serverless Heartbeat
@@ -12,7 +11,7 @@ A serverless CI/CD pipeline built with Python and GitHub Actions to automate web
 ![Discord](https://img.shields.io/badge/Alerts-Discord_Webhook-5865F2?style=for-the-badge&logo=discord)
 ![Uptime Status](https://github.com/maiiapiyushhoon/serverless-heartbeat/actions/workflows/heartbeat.yml/badge.svg)
 
-[🚀 View Live Dashboard](https://maiiapiyushhoon.github.io/serverless-heartbeat/)
+![🚀 View Live Dashboard](https://maiiapiyushhoon.github.io/serverless-heartbeat/)
 
 </div>
 
@@ -40,5 +39,26 @@ This is a production-ready, zero-cost monitoring solution. Instead of paying for
 
 2. **The Incident Response (Discord Integration):** Using `os.getenv`, the script securely retrieves a Discord Webhook. If the site is down or latency exceeds **1000ms**, the bot fires an emergency alert with a full diagnostic report.
 
-3. **The GitOps Pipeline (Automation):** The `.github/workflows/heartbeat.yml` handles the dirty
-4. 
+3. **The GitOps Pipeline (Automation):** The `.github/workflows/heartbeat.yml` handles the dirty work:
+   * Wakes up every 6 hours (via Cron).
+   * Spins up an ephemeral Ubuntu server.
+   * Runs the Python logic.
+   * **Rebases** and pushes the logs and the new `index.html` back to the repo.
+
+4. **The Frontend (Auto-Dashboard):**
+   The script dynamically overwrites `index.html` with the latest log data. GitHub Pages then serves this file as a public, dark-mode status page.
+
+---
+
+## 🔧 How to Deploy Your Own
+1. **Fork** this repository.
+2. **Add Secret:** Go to `Settings > Secrets > Actions` and add your Discord Webhook as `DISCORD_WEBHOOK`.
+3. **Configure:** Edit the `URL` in `monitor.py` to your target website.
+4. **Enable Pages:** Go to `Settings > Pages` and set the source to the `main` branch.
+5. **Run:** Trigger the workflow manually from the `Actions` tab!
+
+---
+<div align="center">
+  <sub>Built with ❤️ by <b>Piyush</b> during a 4 AM DevOps session.</sub>
+</div>
+
