@@ -1,0 +1,33 @@
+name: Serverless Heartbeat
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Runs automatically every 6 hours
+  workflow_dispatch: # Gives a manual "Run" button for testing!
+
+# This gives the bot permission to save the log file back to our repo
+permissions:
+  contents: write 
+
+jobs:
+  ping-website:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run the Python Script
+        run: python monitor.py
+
+      - name: Commit and Push the Log
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add status_log.txt
+          git commit -m "🤖 Auto-Update: Checked website status" || exit 0
+          git push
+          
