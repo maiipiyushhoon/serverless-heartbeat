@@ -9,6 +9,7 @@ A serverless CI/CD pipeline built with Python and GitHub Actions to automate web
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
 ![GitHub Actions](https://img.shields.io/badge/Automated_by-GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions)
 ![Zero Cost](https://img.shields.io/badge/Infrastructure-Zero_Cost-success?style=for-the-badge)
+![Uptime Status](https://github.com/maiiapiyushhoon/serverless-heartbeat/actions/workflows/heartbeat.yml/badge.svg)
 
 *A lightweight, serverless CI/CD uptime monitoring system.*
 
