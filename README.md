@@ -9,9 +9,9 @@ A serverless CI/CD pipeline built with Python and GitHub Actions to automate web
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
 ![GitHub Actions](https://img.shields.io/badge/CI/CD-GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions)
 ![Discord](https://img.shields.io/badge/Alerts-Discord_Webhook-5865F2?style=for-the-badge&logo=discord)
-![Uptime Status](https://github.com/maiiapiyushhoon/serverless-heartbeat/actions/workflows/heartbeat.yml/badge.svg)
+![Uptime Status](https://github.com/maiipiyushhoon/serverless-heartbeat/actions/workflows/heartbeat.yml/badge.svg)
 
-![🚀 View Live Dashboard](https://maiiapiyushhoon.github.io/serverless-heartbeat/)
+![🚀 View Live Dashboard](https://maiipiyushhoon.github.io/serverless-heartbeat/)
 
 </div>
 
