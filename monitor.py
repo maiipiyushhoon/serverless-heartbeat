@@ -43,6 +43,6 @@ if __name__ == "__main__":
     print(f"Logged: {log_entry}")
 
     # The Alert Trigger: Only ping Discord if it's down, warning, or dangerously slow (> 1000ms)
-    if "DOWN" in status or "WARNING" in status or latency > 1000:
+    if "DOWN" in status or "WARNING" in status or latency > 0:
         alert_msg = f"🚨 **MONITOR ALARM** 🚨\n**Target:** {URL}\n**Status:** {status}\n**Latency:** {latency}ms"
         send_discord_alert(alert_msg)
