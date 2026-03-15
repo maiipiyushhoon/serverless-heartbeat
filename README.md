@@ -4,16 +4,18 @@ A serverless CI/CD pipeline built with Python and GitHub Actions to automate web
 
 <div align="center">
 
-# 🫀 Serverless Heartbeat Monitor
+<h1>🫀 Serverless Heartbeat Monitor</h1>
 
-![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
-![GitHub Actions](https://img.shields.io/badge/Automated_by-GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions)
-![Zero Cost](https://img.shields.io/badge/Infrastructure-Zero_Cost-success?style=for-the-badge)
-![Uptime Status](https://github.com/maiiapiyushhoon/serverless-heartbeat/actions/workflows/heartbeat.yml/badge.svg)
+<img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python" alt="Python">
+<img src="https://img.shields.io/badge/Automated_by-GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions" alt="GitHub Actions">
+<img src="https://img.shields.io/badge/Infrastructure-Zero_Cost-success?style=for-the-badge" alt="Zero Cost">
+<img src="https://github.com/maiiapiyushhoon/serverless-heartbeat/actions/workflows/heartbeat.yml/badge.svg" alt="Uptime Status">
 
-*A lightweight, serverless CI/CD uptime monitoring system.*
+<br><br>
+<em>A lightweight, serverless CI/CD uptime monitoring system.</em>
 
 </div>
+
 
 ---
 
