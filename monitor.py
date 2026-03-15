@@ -1,30 +1,32 @@
 import urllib.request
 import datetime
+import time
 
 URL = "https://paruluniversity.ac.in/"
 
 def check_site():
+    # Start the stopwatch
+    start_time = time.time()
     try:
-        # Pings the website to see if it responds
         code = urllib.request.urlopen(URL, timeout=10).getcode()
+        # Stop the stopwatch and convert to milliseconds
+        latency = round((time.time() - start_time) * 1000) 
+        
         if code == 200:
-            return "🟢 UP"
+            return "🟢 UP", latency
         else:
-            return f"🟡 WARNING ({code})"
+            return f"🟡 WARNING ({code})", latency
     except Exception as e:
-        return "🔴 DOWN"
+        return "🔴 DOWN", 0
 
 if __name__ == "__main__":
-    status = check_site()
-    # Gets the current time
+    status, latency = check_site()
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    # Formats the log message
-    log_entry = f"{timestamp} | {URL} | Status: {status}\n"
+    # Notice the new Latency added to the log!
+    log_entry = f"{timestamp} | {URL} | Status: {status} | Latency: {latency}ms\n"
     
-    # Opens the log file and appends the new entry at the bottom
     with open("status_log.txt", "a") as file:
         file.write(log_entry)
         
     print(f"Mission accomplished. Logged: {log_entry}")
-  
