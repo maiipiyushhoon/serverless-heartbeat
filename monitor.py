@@ -10,13 +10,24 @@ WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK")
 
 def send_discord_alert(message):
     if not WEBHOOK_URL:
+        print("❌ ERROR: Discord Webhook secret is empty or missing!")
         return
+    
+    print("✅ Secret found! Attempting to ping Discord...")
     data = {"content": message}
-    req = urllib.request.Request(WEBHOOK_URL, json.dumps(data).encode(), {"Content-Type": "application/json"})
+    
+    # The Disguise: Tells Discord we are a normal web browser
+    headers = {
+        "Content-Type": "application/json",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    }
+    
+    req = urllib.request.Request(WEBHOOK_URL, json.dumps(data).encode(), headers)
     try:
         urllib.request.urlopen(req)
+        print("✅ Discord message sent successfully!")
     except Exception as e:
-        print(f"Failed to send alert: {e}")
+        print(f"❌ Discord blocked it! Reason: {e}")
 
 def check_site():
     start_time = time.time()
