@@ -30,7 +30,7 @@ if __name__ == "__main__":
     status, latency = check_site()
     log_entry = f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} | {status} | {latency}ms\n"
     with open("status_log.txt", "a") as f: f.write(log_entry)
-    if "DOWN" in status or latency > 1000:
+    if "DOWN" in status or latency > 0:
         send_discord_alert(f"🚨 **ALARM**\n**Status:** {status}\n**Latency:** {latency}ms")
     generate_html_dashboard()
     
